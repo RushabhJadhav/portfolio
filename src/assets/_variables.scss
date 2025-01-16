@@ -1,5 +1,13 @@
+@use '@fontsource-variable/dm-sans';
+
 * {
     box-sizing: border-box;
-    margin: 0 ;
+    margin: 0;
     padding: 0;
+}
+
+body {
+    @extend *;
+    background-color: #191919;
+    font-family: 'DM Sans Variable', sans-serif;
 }

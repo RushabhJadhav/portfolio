@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 3rem auto;
+
+    h1 {
+        background: -webkit-linear-gradient(#13B0F5, #E70FAA);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    nav {
+        display: flex;
+        gap: 2rem;
+
+        ul {
+            display: inherit;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            list-style-type: none;
+            gap: 3.5rem;
+
+            a {
+                text-decoration: none;
+                color: #A7A7A7;
+            }
+        }
+
+        .social-links {
+            display: inherit;
+            gap: 1.2rem;
+            a {
+                color: #A7A7A7;
+                font-size: 1.5rem;
+            }
+        }   
+    }
+}
