@@ -1,4 +1,52 @@
+@use '../abstract/variables' as *;
+
 .projects-container {
     width: 80%;
-    margin: auto;
+    margin: 0 auto 10rem auto;
+
+    .cards-container {
+        margin-top: 5rem;
+
+        .card {
+            width: 300px;
+            background-color: $dark-grey;
+            border-radius: 1rem;
+            
+            .card-img {
+                height: 200px;
+                width: 100%;
+                border-radius: 1rem 1rem 0 0;
+            }
+
+            .card-texts {
+                padding: 1.5rem;
+    
+                h3 {
+                    color: $solid-heading;
+                }
+    
+                p {
+                    font-size: 1rem;
+                    text-align: left;
+                }
+    
+                ul {
+                    list-style-type: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-top: .8rem;
+                    width: 80%;
+    
+                    li {
+                        
+                        a {
+                            font-size: .8rem;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
