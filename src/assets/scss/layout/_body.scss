@@ -1,0 +1,19 @@
+@use "../abstract/variables" as *;
+
+.intro {
+    width: 80%;
+    margin: 8rem auto;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    span {
+        font-size: 1.5rem;
+    }
+
+    h1, span {
+        color: $solid-heading;
+    }
+}

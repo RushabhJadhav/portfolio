@@ -1,4 +1,4 @@
-@use '@fontsource-variable/dm-sans';
+@use '../abstract/variables' as *;
 
 * {
     box-sizing: border-box;
@@ -9,5 +9,5 @@
 body {
     @extend *;
     background-color: #191919;
-    font-family: 'DM Sans Variable', sans-serif;
+    font-family: $primary-font;
 }
