@@ -5,15 +5,17 @@
     margin: 0 auto 10rem auto;
 
     .cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5rem;
         margin-top: 5rem;
 
         .card {
-            width: 300px;
             background-color: $dark-grey;
             border-radius: 1rem;
             
             .card-img {
-                height: 200px;
+                height: 250px;
                 width: 100%;
                 border-radius: 1rem 1rem 0 0;
             }
@@ -28,6 +30,10 @@
                 p {
                     font-size: 1rem;
                     text-align: left;
+
+                    span {
+                        font-size: .9rem;
+                    }
                 }
     
                 ul {
@@ -36,13 +42,18 @@
                     flex-direction: row;
                     justify-content: space-between;
                     padding-top: .8rem;
-                    width: 80%;
+                    width: 90%;
     
                     li {
                         
                         a {
                             font-size: .8rem;
                             color: #FFFFFF;
+
+                            svg {
+                                margin-right: .4rem;
+                                height: 1rem;
+                            }
                         }
                     }
                 }
