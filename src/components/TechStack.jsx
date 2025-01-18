@@ -28,8 +28,9 @@ const TechStack = () => {
     ];
 
     return (
-        <div className='stack-container'>
+        <div className='stack-container section'>
             <h1>My Tech Stack</h1>
+            <p>Technologies I’ve been working with recently</p>
             <div className='stack-images'>
                 {images.map((item, index) => {
                     return <img key={index} src={item.imgSrc} alt={item.altTxt} />
