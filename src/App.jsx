@@ -1,12 +1,14 @@
-import Header from "./components/Header";
-import Body from "./components/Body";
+import Header from "./layout/Header";
+import PageBody from "./layout/PageBody";
+import Footer from "./layout/Footer";
 
 function App() {
 
   return (
     <>
       <Header></Header>
-      <Body></Body>
+      <PageBody></PageBody>
+      <Footer></Footer>
     </>
   )
 }
