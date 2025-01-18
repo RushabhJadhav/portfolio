@@ -1,0 +1,21 @@
+.stack-container {
+    width: 80%;
+    margin: 10rem auto;
+
+    h1 {
+        text-align: center;
+    }
+
+    .stack-images {
+        display: inline-flex;
+        flex-direction: row;
+        gap: 6rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 6rem;
+        
+        img {
+            height: 6rem;
+        }
+    }
+}

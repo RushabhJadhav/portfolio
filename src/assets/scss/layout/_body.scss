@@ -2,7 +2,7 @@
 
 .intro {
     width: 80%;
-    margin: 8rem auto;
+    margin: 12rem auto 14rem auto;
     text-align: center;
 
     h1 {
@@ -11,9 +11,6 @@
 
     span {
         font-size: 1.5rem;
-    }
-
-    h1, span {
         color: $solid-heading;
     }
 }

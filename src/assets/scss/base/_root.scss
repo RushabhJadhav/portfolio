@@ -11,3 +11,7 @@ body {
     background-color: #191919;
     font-family: $primary-font;
 }
+
+h1, img[alt] {
+    color: $solid-heading;
+}
