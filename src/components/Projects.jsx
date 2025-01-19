@@ -30,7 +30,7 @@ const Projects = () => {
                         <div className="card-texts">
                             <h3>{ item.title }</h3>
                             <p>{ item.desc }</p>
-                            <p>Tech stack : <span>{ item.desc }</span></p>
+                            <p>Tech stack : <span>{ item.stack }</span></p>
                             <ul className="card-links">
                                 <li>
                                     <a href={item.preview} target="_blank">
