@@ -1,7 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Header = () => {
     return (
@@ -11,10 +9,10 @@ const Header = () => {
                 <nav>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="about">About</a></li>
                         <li><a href="#tech-stack">Tech Stack</a></li>
                         <li><a href="#projects">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                     <div className="social-links">
                         <a href="https://github.com/RushabhJadhav/" target='_blank'>
