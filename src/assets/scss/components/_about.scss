@@ -1,11 +1,85 @@
+@use "../abstract/variables" as *;
+
 #about-section {
     width: 80%;
     margin: 5rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2rem;
     
-    .about-container {
-        h1, p {
-            text-align: left;
-        }
-        width: 50%;
+    h1, p {
+        text-align: left;
     }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .about-container {
+        width: 50%;
+
+        p {
+            padding-bottom: .5rem;
+        }
+    }
+
+    .qualifications {
+        width: 50%;
+        color: $light-grey;
+        display: inherit;
+        flex-direction: column;
+        gap: 2rem;
+        
+        .experience-cont, .education-cont {
+
+            h1 {    
+                padding-bottom: 1rem;
+            }
+
+            .experience {
+                display: flex;
+                flex-direction: column;
+                border-bottom: 1px solid $light-grey;
+                padding-bottom: 1.2rem;
+    
+                .upper-section, .lower-section {
+                    display: inherit;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                .upper-section {
+
+                    .tenure {
+                        font-size: 0.8rem;
+                        padding: .2rem 1rem;
+                        border-radius: 22px;
+                        background-color: $light-green;
+                        color: $dark-green;
+                        font-weight: bold;
+                    }
+                }
+    
+                .lower-section {
+    
+                    span {
+                        display: inherit;
+                        align-items: center;
+                        gap: .5rem;
+
+                        svg {
+                            height: .8rem;
+                            margin-top: 9px;
+                        }
+    
+                        p {
+                            font-size: .9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

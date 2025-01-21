@@ -8,7 +8,7 @@
 
 body {
     @extend *;
-    background-color: #191919;
+    background-color: $bg-dark-color;
     font-family: $primary-font;
 }
 
