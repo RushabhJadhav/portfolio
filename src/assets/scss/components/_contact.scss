@@ -1,0 +1,23 @@
+@use "../abstract/variables" as * ;
+
+.contact {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    height: 60vh;
+    padding-top: 5%;
+
+    p {
+        vertical-align: middle;
+        color: $dark-grey-2;
+        font-size: 2.5rem;
+        font-weight: bold;
+
+        a {
+            text-decoration: none;
+            background: -webkit-linear-gradient($bright-blue, $hot-pink);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
