@@ -5,13 +5,41 @@
     margin: 12rem auto 14rem auto;
     text-align: center;
 
-    h1 {
-        font-size: 2.5rem;
-        color: $solid-heading;
+    .intro-text {
+        display: inline-block;
+        
+        h1 {
+            font-size: 2.5rem;
+            color: $solid-heading;
+        }
+    
+        .typed {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 1px solid $solid-heading;
+            animation: typing 6.5s linear forwards, blinking 1s 5s infinite;
+        }
+    
+        span {
+            font-size: 1.5rem;
+            color: $light-grey;
+        }
     }
 
-    span {
-        font-size: 1.5rem;
-        color: $light-grey;
+}
+
+@keyframes typing {
+    from { 
+        width: 0
     }
+    to {
+        width: 100%;
+        padding-right: .5rem;
+    }
+}
+
+@keyframes blinking {
+    0% {border-right-color: $solid-heading}
+    50% {border-right-color: transparent}
+    100% {border-right-color: $solid-heading}
 }
