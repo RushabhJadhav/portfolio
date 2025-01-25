@@ -2,7 +2,7 @@
 
 .intro {
     width: 80%;
-    margin: 12rem auto 14rem auto;
+    margin: 10rem auto 14rem auto;
     text-align: center;
 
     .intro-text {
@@ -19,12 +19,46 @@
             overflow: hidden;
             white-space: nowrap;
             border-right: 2px solid $solid-heading;
-            animation: typing 3s linear forwards, blinking 1s 3s infinite;
+            visibility: hidden;
         }
+        
+        .line_1 {
+            animation: typing 1.5s linear forwards, blinking 1s 3s infinite;
+        }
+        
+        .line_2 {
+            animation: typing 1.5s linear forwards, blinking 1s 3s infinite;
+            animation-delay: 1.5s;
+        }
+
+        .line_3 {
+            animation: typing 1.5s linear forwards, blinking 1s 3s infinite;
+            animation-delay: 3s;
+        }
+
+        .line_4 {
+            animation: typing 1.5s linear forwards, blinking 1s 3s infinite;
+            animation-delay: 4.5s;
+        }
+        
     
         span {
             font-size: 1.5rem;
             color: $light-grey;
+        }
+
+        .CV_btn {
+            margin: 1rem;
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            background-color: $bright-blue;
+            color: $solid-heading;
+
+            svg {
+                padding-right: .5rem;
+            }
         }
     }
 
@@ -32,16 +66,24 @@
 
 @keyframes typing {
     from { 
-        width: 0
+        width: 0;
+        visibility: visible;
     }
     to {
         width: 100%;
         padding-right: .5rem;
+        visibility: visible;
     }
 }
 
 @keyframes blinking {
-    0% {border-right-color: $solid-heading}
-    50% {border-right-color: transparent}
-    100% {border-right-color: $solid-heading}
+    0% {
+        border-right-color: $solid-heading
+    }
+    50% {
+        border-right-color: transparent
+    }
+    100% {
+        border-right-color: $solid-heading
+    }
 }
