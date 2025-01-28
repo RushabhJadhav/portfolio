@@ -2,7 +2,7 @@
 
 .intro {
     width: 80%;
-    margin: 10rem auto 14rem auto;
+    margin: 12rem auto 14rem auto;
     text-align: center;
 
     .intro-text {
@@ -23,22 +23,22 @@
         }
         
         .line_1 {
-            animation: typing 1.5s linear forwards, blinking 1s 3s infinite;
+            animation: typing 2s linear forwards;
         }
         
         .line_2 {
-            animation: typing 1.5s linear forwards, blinking 1s 3s infinite;
-            animation-delay: 1.5s;
+            animation: typing 2s linear forwards, blinking 1s 3s infinite;
+            animation-delay: 2s;
         }
 
         .line_3 {
-            animation: typing 1.5s linear forwards, blinking 1s 3s infinite;
-            animation-delay: 3s;
+            animation: typing 2s linear forwards, blinking 1s 3s infinite;
+            animation-delay: 4s;
         }
 
         .line_4 {
-            animation: typing 1.5s linear forwards, blinking 1s 3s infinite;
-            animation-delay: 4.5s;
+            animation: typing 2s linear forwards, blinking 1s 3s infinite;
+            animation-delay: 6s;
         }
         
     

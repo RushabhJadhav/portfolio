@@ -5,10 +5,10 @@ const Intro = () => {
     return (
         <div className="intro">
             <div className="intro-text">
-                <h1>Hi, I'm Rushabh, a Self Taught</h1>
-                <h1>Frontend Developer</h1>
-                <span>Based in Mumbai, Maharashtra, India</span>
-                <span>Specialized in Vue and React</span>
+                <h1 className="typed line_1">Hi, I'm Rushabh, a Self Taught</h1>
+                <h1 className="typed line_2">Frontend Developer</h1>
+                <span className="typed line_3">Based in Mumbai, Maharashtra, India</span>
+                <span className="typed line_4">Specialized in Vue and React</span>
                 {/* <a className="CV_btn" href="../assets/pdf/Rushabh_Jadhav_CV.pdf" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faDownload} />
                     Resume
