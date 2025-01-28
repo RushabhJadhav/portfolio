@@ -12,30 +12,35 @@ import vscodeLogo from '../assets/img/vscode-icons_file-type-vscode.svg';
 import typescriptLogo from '../assets/img/typescript.svg';
 
 const TechStack = () => {
-    const images = [
-        {imgSrc: htmlLogo, altTxt: "HTML Logo"},
-        {imgSrc: cssLogo, altTxt: "CSS Logo"},
-        {imgSrc: jsLogo, altTxt: "JavaScript Logo"},
-        {imgSrc: reactLogo, altTxt: "React Logo"},
-        {imgSrc: vueLogo, altTxt: "Vue Logo"},
-        {imgSrc: sassLogo, altTxt: "Sass Logo"},
-        {imgSrc: bootstrapLogo, altTxt: "Bootstrap Logo"},
-        {imgSrc: tailwindLogo, altTxt: "Git Logo"},
-        {imgSrc: gitLogo, altTxt: "Git Logo"},
-        {imgSrc: reduxLogo, altTxt: "Redux Logo"},
-        {imgSrc: vscodeLogo, altTxt: "VS Code Logo"},
-        {imgSrc: typescriptLogo, altTxt: "Tyepscript Logo"},
+    const stackBlock = [
+        {imgSrc: htmlLogo, altTxt: "HTML Logo", text: "HTML"},
+        {imgSrc: cssLogo, altTxt: "CSS Logo", text: "CSS"},
+        {imgSrc: jsLogo, altTxt: "JavaScript Logo", text: "Javascript"},
+        {imgSrc: reactLogo, altTxt: "React Logo", text: "React JS"},
+        {imgSrc: vueLogo, altTxt: "Vue Logo", text: "Vue JS"},
+        {imgSrc: reduxLogo, altTxt: "Redux Logo", text: "Redux"},
+        {imgSrc: typescriptLogo, altTxt: "Tyepscript Logo", text: "Typescript"},
+        {imgSrc: sassLogo, altTxt: "Sass Logo", text: "SASS/SCSS"},
+        {imgSrc: bootstrapLogo, altTxt: "Bootstrap Logo", text: "Bootstrap"},
+        {imgSrc: tailwindLogo, altTxt: "Tailwind Logo", text: "Tailwind"},
+        {imgSrc: gitLogo, altTxt: "Git Logo", text: "GIT"},
+        {imgSrc: vscodeLogo, altTxt: "VS Code Logo", text: "VS Code"},
     ];
 
     return (
         <div id='tech-stack' className='stack-container section'>
             <h1>My Tech Stack</h1>
             <p>Technologies I’ve been working with recently</p>
-            <div className='stack-images'>
-                {images.map((item, index) => {
-                    return <img key={index} src={item.imgSrc} alt={item.altTxt} />
+            <ul className='stack-images'>
+                {stackBlock.map((item, index) => {
+                    return (
+                        <li>
+                            <img key={index} src={item.imgSrc} alt={item.altTxt} />
+                            <span>{item.text}</span>
+                        </li>
+                    )
                 })}
-            </div>
+            </ul>
         </div>
     )
 }

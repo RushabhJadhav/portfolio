@@ -23,7 +23,7 @@
         }
         
         .line_1 {
-            animation: typing 2s linear forwards;
+            animation: typing 2s linear forwards, blinking 1s 3s infinite;
         }
         
         .line_2 {

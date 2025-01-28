@@ -1,17 +1,36 @@
+@use "../abstract/variables" as *;
+
 .stack-container {
     width: 80%;
     margin: 10rem auto;
 
     .stack-images {
-        display: inline-flex;
+        list-style-type: none;
+        display: flex;
         flex-direction: row;
-        gap: 6rem;
+        gap: 4rem;
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 6rem;
+        color: $solid-heading;
         
-        img {
-            height: 6rem;
+        li {
+            display: inherit;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: .6rem;
+            border: 1px solid $light-grey;
+            height: 4rem;
+            width: 10rem;
+            padding: 1rem;
+            border-radius: .5rem;
+            cursor: pointer;
+
+            img {
+                height: calc(100% - 20%);
+            }
         }
+        
     }
 }
