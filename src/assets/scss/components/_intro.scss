@@ -2,45 +2,19 @@
 
 .intro {
     width: 80%;
-    margin: 12rem auto 14rem auto;
+    margin: 11rem auto 14rem auto;
     text-align: center;
 
     .intro-text {
         display: inline-flex;
         flex-direction: column;
         align-items: center;
+        animation: fade-in-down 1s linear forwards;
         
         h1 {
             font-size: 2.5rem;
             color: $solid-heading;
         }
-    
-        .typed {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid $solid-heading;
-            visibility: hidden;
-        }
-        
-        .line_1 {
-            animation: typing 2s linear forwards, blinking 1s 3s infinite;
-        }
-        
-        .line_2 {
-            animation: typing 2s linear forwards, blinking 1s 3s infinite;
-            animation-delay: 2s;
-        }
-
-        .line_3 {
-            animation: typing 2s linear forwards, blinking 1s 3s infinite;
-            animation-delay: 4s;
-        }
-
-        .line_4 {
-            animation: typing 2s linear forwards, blinking 1s 3s infinite;
-            animation-delay: 6s;
-        }
-        
     
         span {
             font-size: 1.5rem;
@@ -62,28 +36,4 @@
         }
     }
 
-}
-
-@keyframes typing {
-    from { 
-        width: 0;
-        visibility: visible;
-    }
-    to {
-        width: 100%;
-        padding-right: .5rem;
-        visibility: visible;
-    }
-}
-
-@keyframes blinking {
-    0% {
-        border-right-color: $solid-heading
-    }
-    50% {
-        border-right-color: transparent
-    }
-    100% {
-        border-right-color: $solid-heading
-    }
 }
