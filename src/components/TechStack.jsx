@@ -23,8 +23,8 @@ const TechStack = () => {
         {imgSrc: sassLogo, altTxt: "Sass Logo", text: "SASS/SCSS"},
         {imgSrc: bootstrapLogo, altTxt: "Bootstrap Logo", text: "Bootstrap"},
         {imgSrc: tailwindLogo, altTxt: "Tailwind Logo", text: "Tailwind"},
-        {imgSrc: gitLogo, altTxt: "Git Logo", text: "GIT"},
-        {imgSrc: vscodeLogo, altTxt: "VS Code Logo", text: "VS Code"},
+        // {imgSrc: gitLogo, altTxt: "Git Logo", text: "GIT"},
+        // {imgSrc: vscodeLogo, altTxt: "VS Code Logo", text: "VS Code"},
     ];
 
     return (
@@ -34,8 +34,8 @@ const TechStack = () => {
             <ul className='stack-images'>
                 {stackBlock.map((item, index) => {
                     return (
-                        <li>
-                            <img key={index} src={item.imgSrc} alt={item.altTxt} />
+                        <li key={index}>
+                            <img src={item.imgSrc} alt={item.altTxt} />
                             <span>{item.text}</span>
                         </li>
                     )

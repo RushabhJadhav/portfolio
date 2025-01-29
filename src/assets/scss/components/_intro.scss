@@ -7,9 +7,11 @@
 
     .intro-text {
         display: inline-flex;
+        opacity: 0;
         flex-direction: column;
         align-items: center;
         animation: fade-in-down 1s linear forwards;
+        animation-delay: 1s;
         
         h1 {
             font-size: 2.5rem;

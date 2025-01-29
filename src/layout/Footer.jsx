@@ -11,7 +11,7 @@ const Footer = () => {
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul> */}
-                <p>Built on Design by Pavan MG</p>
+                <p>Handcrafter with &#129505; by Rushabh &#169; 2025</p>
             </div>
         </footer>
     )
