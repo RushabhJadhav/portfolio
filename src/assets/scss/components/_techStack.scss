@@ -1,8 +1,13 @@
 @use "../abstract/variables" as *;
 
 .stack-container {
+    height: 100vh;
     width: 80%;
-    margin: 10rem auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     .stack-images {
         list-style-type: none;

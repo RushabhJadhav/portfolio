@@ -2,8 +2,11 @@
 
 .intro {
     width: 80%;
-    margin: 11rem auto 14rem auto;
-    text-align: center;
+    margin: auto;
+    display: flex;
+    padding-top: 16vh;
+    justify-content: center;
+    height: 80vh;
 
     .intro-text {
         display: inline-flex;
