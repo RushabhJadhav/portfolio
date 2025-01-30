@@ -1,38 +1,15 @@
 @use "../abstract/variables" as *;
 
 footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
     width: 80%;
     margin: auto;
+    border-top: 1px solid $dark-grey-2;
 
-    .footer-links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 3rem 0;
-
-        ul {
-            display: inherit;
-            list-style-type: none;
-            gap: 3rem;
-
-            li {
-                
-                a {
-                    color: $light-grey;
-                    text-decoration: dotted;
-                }
-            }
-        }
-
-        p {
-            width: 100%;
-            color: $light-grey;
-            text-align: center;
-        }
-    }
-
-    hr {
-        border: 1px solid $dark-grey-2;
+    p {
+        color: $light-grey;
     }
 }
