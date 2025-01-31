@@ -13,19 +13,23 @@ body {
 }
 
 .section {
-    h1, img[alt] {
-        color: $solid-heading;
-    }
+  h1, img[alt] {
+      color: $solid-heading;
+  }
 
-    h1, p {
-        text-align: center;
-    }
-    
-    p {
-        color: $light-grey;
-        font-size: 1.5rem;
-        margin-top: .5rem;
-    }
+  h1, p {
+      text-align: center;
+  }
+  
+  p {
+      color: $light-grey;
+      font-size: 1.5rem;
+      margin-top: .5rem;
+  }
+}
+
+.show {
+  animation: fade-in-left 2s linear forwards;
 }
 
 ::-webkit-scrollbar {
