@@ -26,16 +26,44 @@
         }
 
         .CV_btn {
-            margin: 1rem;
-            padding: 1rem 1.5rem;
+            position: relative;
+            margin: 1.5rem;
+            height: 3rem;
+            width: 6rem;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             background-color: $bright-blue;
             color: $solid-heading;
+            overflow: hidden;
+
+            p, svg {
+                position: absolute;
+                right: 50%;
+                top: 50%;
+                transition: all 500ms ease-in-out;
+            }
+            
+            p {
+                transform: translate(50%, -50%);
+            }
 
             svg {
-                padding-right: .5rem;
+                height: 1.2rem;
+                transform: translate(50%, 200%);
+                opacity: 0;
+            }
+
+            &:hover {
+
+                p {
+                    transform: translate(50%, -200%);
+                    opacity: 0;
+                }
+                svg {
+                    transform: translate(50%, -50%);
+                    opacity: 1;
+                }
             }
         }
     }
