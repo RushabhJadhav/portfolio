@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faCloudArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 const Intro = () => {
     return (
@@ -11,7 +11,7 @@ const Intro = () => {
                 <span>Specialized in Vue and React</span>
                 <a className="CV_btn" href="/pdf/Rushabh_Jadhav_CV.pdf" target="_blank" rel="noopener noreferrer">
                     <p>Resume</p>
-                    <FontAwesomeIcon icon={faDownload} />
+                    <FontAwesomeIcon icon={faCloudArrowDown} />
                 </a>
             </div>
         </div>
