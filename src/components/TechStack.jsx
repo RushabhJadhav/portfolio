@@ -10,6 +10,7 @@ import tailwindLogo from '../assets/img/vscode-icons_file-type-tailwind.svg';
 import reduxLogo from '../assets/img/Vector.png';
 import vscodeLogo from '../assets/img/vscode-icons_file-type-vscode.svg';
 import typescriptLogo from '../assets/img/typescript.svg';
+import { useLocation } from 'react-router-dom';
 
 const TechStack = () => {
     const stackBlock = [
@@ -27,8 +28,10 @@ const TechStack = () => {
         // {imgSrc: vscodeLogo, altTxt: "VS Code Logo", text: "VS Code"},
     ];
 
+    const { pathname } = useLocation();
+
     return (
-        <div id='tech-stack' className='stack-container section'>
+        <div id='tech-stack' className='stack-container section' style={pathname == '/tech-stack' ? { height: '70vh' } : {}}>
             <h1>My Tech Stack</h1>
             <p>Technologies I’ve been working with recently</p>
             <ul className='stack-images'>

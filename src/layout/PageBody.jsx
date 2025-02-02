@@ -5,9 +5,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const PageBody = () => {
-    const location = useLocation();
-
-    const { pathname } = location;
+    const { pathname } = useLocation();
 
     useEffect(() => {
         const sections = document.querySelectorAll(".section")

@@ -29,7 +29,7 @@ body {
 }
 
 .show {
-  animation: fade-in-left 2s linear forwards;
+  animation: fade-in-left 500ms ease-in-out forwards;
 }
 
 ::-webkit-scrollbar {
