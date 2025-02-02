@@ -26,6 +26,8 @@ const Projects = () => {
                 {projectCards.map((item, index) => {
                     return <div className="card" key={index} style={{backgroundImage: `url(${item.img})`}}>
                         <div className="card-text">
+                            <p className="card-title">{item.title}</p>
+                            <p className="card-desc">{item.desc}</p>
                             <ul className="card-links">
                                 <li>
                                     <a href={item.preview} target="_blank">
