@@ -44,15 +44,42 @@ header {
             }
         }   
     }
+
+    .hamburger-menu {
+        display: none;
+
+        .bar {
+            background-color: $solid-heading;
+            width: 3rem;
+            height: .2rem;
+            margin: .5rem;
+            border-radius: .5rem;
+        }
+    }
 }
 
 @media (max-width: $breakpoint-tablet) {
     header {
         width: 90%;
         height: 10vh;
-
+        position: relative;
+        // border: 1px solid blue;
+        
         nav {
             display: none;
+        }
+
+        .hamburger-menu {
+            display: block;
+        }
+
+        .hamburger-nav {
+            position: absolute;
+            // border: 1px solid red;
+            height: 100vh;
+            width: 100vw;
+            top: 100%;
+            right: -5%;
         }
     }
 }
@@ -66,6 +93,13 @@ header {
 
         nav {
             display: none;
+        }
+
+        .hamburger-menu {
+
+            .bar {
+                width: 2.4rem;
+            }
         }
     }
 }

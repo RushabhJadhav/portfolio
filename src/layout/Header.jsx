@@ -1,8 +1,27 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import { useRef, useState } from 'react';
 
 const Header = () => {
+    let [isOpen, setIsOpen] = useState(false);
+    
+    const hamburgerMenu = useRef(null);
+
+    const handleClick = () => {
+        setIsOpen(prevState => {
+            const newState = !prevState;
+
+            if(newState) {
+                hamburgerMenu.current.classList.add('open')
+            } else {
+                hamburgerMenu.current.classList.remove('open')
+            }
+
+            return newState;
+        })
+    }
+
     return (
         <>
             <header>
@@ -27,7 +46,11 @@ const Header = () => {
                         </a>
                     </div>
                 </nav>
-                <div className="hamburger-menu"></div>
+                <div className="hamburger-menu" onClick={handleClick} ref={hamburgerMenu}>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                </div>
                 <ul className="hamburger-nav"></ul>
             </header>
         </>
