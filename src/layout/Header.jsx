@@ -27,6 +27,8 @@ const Header = () => {
                         </a>
                     </div>
                 </nav>
+                <div className="hamburger-menu"></div>
+                <ul className="hamburger-nav"></ul>
             </header>
         </>
     )

@@ -69,3 +69,37 @@
     }
 
 }
+
+@media (max-width: $breakpoint-tablet) {
+    .intro {
+        height: 91vh;
+
+        .intro-text {
+            margin-top: 10vh;
+            
+            h1:nth-of-type(2), span:nth-of-type(2) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .intro {
+        width: 85%;
+
+        .intro-text {
+            align-items: flex-start;
+            margin-left: 0;
+            margin-top: 0;
+
+            // h1 {
+            //     font-size: 2.3rem;
+            // }
+
+            .CV_btn {
+                margin-left: 0;
+            }
+        }
+    }
+}

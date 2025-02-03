@@ -39,3 +39,17 @@
         
     }
 }
+
+@media (max-width: $breakpoint-mobile) {
+    .stack-container {
+        width: 85%;
+
+        .stack-images {
+            gap: 2rem;
+
+            li {
+                width: 9rem;
+            }
+        }
+    }
+}

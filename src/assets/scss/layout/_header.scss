@@ -45,3 +45,27 @@ header {
         }   
     }
 }
+
+@media (max-width: $breakpoint-tablet) {
+    header {
+        width: 90%;
+        height: 10vh;
+
+        nav {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    header {
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        nav {
+            display: none;
+        }
+    }
+}
