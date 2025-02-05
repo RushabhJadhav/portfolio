@@ -47,6 +47,23 @@ header {
 
     .hamburger-menu {
         display: none;
+        padding: 1rem;
+        overflow: hidden;
+        
+        &.open {
+
+            .bar:nth-of-type(1) {
+                transform: rotate(45deg) translate(10px, 6px);
+            }
+            
+            .bar:nth-of-type(2) {
+                transform: translateX(200%);
+            }
+            
+            .bar:nth-of-type(3) {
+                transform: rotate(-45deg) translate(10px, -6px);
+            }
+        }
 
         .bar {
             background-color: $solid-heading;
@@ -54,6 +71,7 @@ header {
             height: .2rem;
             margin: .5rem;
             border-radius: .5rem;
+            transition: transform 200ms ease-in-out;
         }
     }
 }
@@ -63,7 +81,6 @@ header {
         width: 90%;
         height: 10vh;
         position: relative;
-        // border: 1px solid blue;
         
         nav {
             display: none;
@@ -75,7 +92,6 @@ header {
 
         .hamburger-nav {
             position: absolute;
-            // border: 1px solid red;
             height: 100vh;
             width: 100vw;
             top: 100%;
