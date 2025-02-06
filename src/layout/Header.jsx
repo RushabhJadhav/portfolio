@@ -6,6 +6,7 @@ import { useRef, useState } from 'react';
 const Header = () => {
     let [isOpen, setIsOpen] = useState(false);
     
+    const hamburgerBars = useRef(null);
     const hamburgerMenu = useRef(null);
 
     const handleClick = () => {
@@ -13,9 +14,11 @@ const Header = () => {
             const newState = !prevState;
 
             if(newState) {
-                hamburgerMenu.current.classList.add('open')
+                hamburgerBars.current.classList.add('open');
+                hamburgerMenu.current.classList.add('open');
             } else {
-                hamburgerMenu.current.classList.remove('open')
+                hamburgerBars.current.classList.remove('open');
+                hamburgerMenu.current.classList.remove('open');
             }
 
             return newState;
@@ -46,12 +49,18 @@ const Header = () => {
                         </a>
                     </div>
                 </nav>
-                <div className="hamburger-menu" onClick={handleClick} ref={hamburgerMenu}>
+                <div className="hamburger-menu" onClick={handleClick} ref={hamburgerBars}>
                     <div className="bar"></div>
                     <div className="bar"></div>
                     <div className="bar"></div>
                 </div>
-                <ul className="hamburger-nav"></ul>
+                <ul className="hamburger-nav" ref={hamburgerMenu}>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/tech-stack">Tech Stack</Link></li>
+                    <li><Link to="/projects">Projects</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                </ul>
             </header>
         </>
     )

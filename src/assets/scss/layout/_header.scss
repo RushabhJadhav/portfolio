@@ -74,6 +74,33 @@ header {
             transition: transform 200ms ease-in-out;
         }
     }
+
+    .hamburger-nav {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        top: 100%;
+        right: -120vw;
+        text-align: center;
+        padding-top: 2rem;
+        
+        &.open {
+            right: -5vw;
+            translate: all 1s linear;
+            display: block;
+        }
+
+        li {
+            padding: 1rem;
+
+            a {
+                text-decoration: none;
+                color: $light-grey;
+            }
+        }
+
+    }
 }
 
 @media (max-width: $breakpoint-tablet) {
@@ -88,14 +115,6 @@ header {
 
         .hamburger-menu {
             display: block;
-        }
-
-        .hamburger-nav {
-            position: absolute;
-            height: 100vh;
-            width: 100vw;
-            top: 100%;
-            right: -5%;
         }
     }
 }
