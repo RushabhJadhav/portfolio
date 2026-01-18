@@ -28,7 +28,7 @@ const About = () => {
                             </span>
                             <span>
                                 <FontAwesomeIcon icon={faCalendarDays} />
-                                <p>May 2023 - Present</p>
+                                <p>May 2023 - September 2025</p>
                             </span>
                         </div>
                     </div>
