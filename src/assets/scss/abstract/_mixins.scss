@@ -1,0 +1,33 @@
+@use "variables" as *;
+
+// Flexbox center
+@mixin flex-center($direction: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+// Media Query Mixin
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == "mobile" {
+        @media (max-width: $breakpoint-mobile) { @content; }
+    } @else if $breakpoint == "tablet" {
+        @media (max-width: $breakpoint-tablet) { @content; }
+    } @else {
+        @media (max-width: $breakpoint) { @content; }
+    }
+}
+
+// Animation Mixin for Hover
+@mixin hover-transition($property: all, $duration: 300ms) {
+    transition: $property $duration ease-in-out;
+}
+
+// Section spacing
+@mixin section-padding {
+    padding: 5rem 0;
+    @include respond-to("tablet") {
+        padding: 3rem 0;
+    }
+}

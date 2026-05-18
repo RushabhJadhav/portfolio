@@ -18,6 +18,13 @@ $bg-dark-color: #191919;
 $scrollbar-thumb-color: rgb(18, 18, 18); // Darker shade for the thumb
 $scrollbar-thumb-hover-color: rgb(18, 18, 18, .8); 
 
-// media queries
+// Layout
+$container-width: 80%;
+$container-width-mobile: 90%;
+$section-spacing: 5rem;
+$header-height: 20vh;
+$header-height-mobile: 10vh;
+
+// Media queries
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 425px;
