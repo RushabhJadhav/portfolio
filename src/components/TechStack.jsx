@@ -10,7 +10,7 @@ import tailwindLogo from '../assets/img/vscode-icons_file-type-tailwind.svg';
 import reduxLogo from '../assets/img/Vector.png';
 import vscodeLogo from '../assets/img/vscode-icons_file-type-vscode.svg';
 import typescriptLogo from '../assets/img/typescript.svg';
-import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const TechStack = () => {
     const stackBlock = [
@@ -24,27 +24,45 @@ const TechStack = () => {
         {imgSrc: sassLogo, altTxt: "Sass Logo", text: "SASS/SCSS"},
         {imgSrc: bootstrapLogo, altTxt: "Bootstrap Logo", text: "Bootstrap"},
         {imgSrc: tailwindLogo, altTxt: "Tailwind Logo", text: "Tailwind"},
-        // {imgSrc: gitLogo, altTxt: "Git Logo", text: "GIT"},
-        // {imgSrc: vscodeLogo, altTxt: "VS Code Logo", text: "VS Code"},
     ];
 
-    const { pathname } = useLocation();
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { y: 0, opacity: 1 }
+    };
 
     return (
-        <div id='tech-stack' className='stack-container section' style={pathname == '/tech-stack' ? { height: '70vh' } : {}}>
-            <h1>My Tech Stack</h1>
-            <p>Technologies I’ve been working with recently</p>
+        <motion.div 
+            id='tech-stack' 
+            className='stack-container section'
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+        >
+            <motion.h1 variants={itemVariants}>My Tech Stack</motion.h1>
+            <motion.p variants={itemVariants}>Technologies I’ve been working with recently</motion.p>
             <ul className='stack-images'>
                 {stackBlock.map((item, index) => {
                     return (
-                        <li key={index}>
+                        <motion.li key={index} variants={itemVariants}>
                             <img src={item.imgSrc} alt={item.altTxt} />
                             <span>{item.text}</span>
-                        </li>
+                        </motion.li>
                     )
                 })}
             </ul>
-        </div>
+        </motion.div>
     )
 }
 
