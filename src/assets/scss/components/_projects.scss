@@ -1,97 +1,112 @@
-@use '../abstract/variables' as *;
+@use '../abstract/' as *;
 
 .projects-container {
-    width: 80%;
-    margin: 20vh auto 10rem auto;
+    width: $container-width;
+    margin: auto;
 
     .cards-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 5rem;
-        margin-top: 5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin-top: 3rem;
+
+        @include respond-to("tablet") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @include respond-to("mobile") {
+            grid-template-columns: 1fr;
+        }
 
         .card {
             position: relative;
             overflow: hidden;
-            background-color: $dark-grey;
-            border-radius: 1rem;
-            height: 250px;
-            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            border-radius: 1.5rem;
+            height: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            @include hover-transition;
 
             &:hover {
+                transform: translateY(-10px);
+                
                 .card-text {
                     bottom: 0;
+                    opacity: 1;
                 }
             }
 
             .card-text {
                 position: absolute;
-                bottom: -100%;
+                bottom: -20px;
+                opacity: 0;
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-end;
                 height: 100%;
                 width: 100%;
-                padding: 1rem;
-                backdrop-filter: blur(10px);
-                border-radius: 1rem;
-                transition: bottom 500ms ease-in-out;
-
-                p {
-                    color: $solid-heading;
-                }
+                padding: 1.5rem;
+                background: linear-gradient(to top, rgba($bg-dark-color, 0.95), transparent);
+                backdrop-filter: blur(5px);
+                @include hover-transition(all, 400ms);
 
                 .card-title {
-                    font-size: 1.2rem;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    color: $solid-heading;
+                    margin-bottom: 0.5rem;
                 }
 
-                .card-desc, .card-stack {
-                    font-size: 1rem;
+                .card-desc {
+                    font-size: 0.9rem;
+                    color: $light-grey;
+                    margin-bottom: 1rem;
+                    line-height: 1.4;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
                 }
 
-                ul {
+                .card-stack {
+                    font-size: 0.85rem;
+                    color: $bright-blue;
+                    font-family: $secondary-font;
+                    margin-bottom: 1rem;
+                }
+
+                .card-links {
                     list-style-type: none;
-                    display: flex;
-                    flex-direction: row;
+                    @include flex-center(row);
                     justify-content: space-between;
-                    padding-top: .8rem;
-                    width: 80%;
-                    margin: auto;
+                    gap: 1rem;
         
                     li {
-                        
+                        flex: 1;
                         a {
-                            font-size: .8rem;
-                            color: #FFFFFF;
+                            @include flex-center;
+                            gap: 0.5rem;
+                            font-size: 0.8rem;
+                            color: white;
+                            text-decoration: none;
+                            background: rgba(255,255,255,0.1);
+                            padding: 0.6rem;
+                            border-radius: 8px;
+                            @include hover-transition;
+
+                            &:hover {
+                                background: $bright-blue;
+                            }
     
                             svg {
-                                margin-right: .4rem;
-                                height: 1rem;
+                                font-size: 1rem;
                             }
                         }
                     }
                 }
             }
-        }
-    }
-}
-
-@media (max-width: $breakpoint-tablet) {
-    .projects-container {
-        width: 85%;
-
-        .cards-container {
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-    }
-}
-
-@media (max-width: $breakpoint-mobile) {
-    .projects-container {
-        width: 80%;
-
-        .cards-container {
-            grid-template-columns: 1fr;
         }
     }
 }

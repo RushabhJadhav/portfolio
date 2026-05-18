@@ -1,30 +1,31 @@
-@use "../abstract/variables" as *;
+@use "../abstract/" as *;
 
 header {
-    display: flex;
-    flex-direction: row;
+    @include flex-center(row);
     justify-content: space-between;
-    align-items: center;
-    height: 20vh;
-    width: 80%;
+    height: $header-height;
+    width: $container-width;
     margin: auto;
-    animation: fade-in-left 500ms linear forwards;
+    position: relative;
+    z-index: 100;
 
     h1 {
-        background: -webkit-linear-gradient($bright-blue, $hot-pink);
+        background: linear-gradient(90deg, $bright-blue, $hot-pink);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        font-family: $primary-font;
+        
+        a {
+            text-decoration: none;
+        }
     }
 
     nav {
-        display: flex;
+        @include flex-center(row);
         gap: 2rem;
 
         ul {
-            display: inherit;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+            @include flex-center(row);
             list-style-type: none;
             gap: 3.5rem;
             font-family: $secondary-font;
@@ -32,109 +33,107 @@ header {
             a {
                 text-decoration: none;
                 color: $light-grey;
+                @include hover-transition(color);
+
+                &:hover {
+                    color: $solid-heading;
+                }
             }
         }
 
         .social-links {
-            display: inherit;
+            @include flex-center(row);
             gap: 1.2rem;
             a {
                 color: $light-grey;
                 font-size: 1.5rem;
+                @include hover-transition(transform);
+
+                &:hover {
+                    transform: translateY(-3px);
+                    color: $bright-blue;
+                }
             }
         }   
     }
 
     .hamburger-menu {
         display: none;
-        padding: 1rem;
-        overflow: hidden;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 101;
         
         &.open {
-
             .bar:nth-of-type(1) {
-                transform: rotate(45deg) translate(10px, 6px);
+                transform: rotate(45deg) translate(8px, 8px);
             }
-            
             .bar:nth-of-type(2) {
-                transform: translateX(200%);
+                opacity: 0;
+                transform: translateX(20px);
             }
-            
             .bar:nth-of-type(3) {
-                transform: rotate(-45deg) translate(10px, -6px);
+                transform: rotate(-45deg) translate(7px, -7px);
             }
         }
 
         .bar {
             background-color: $solid-heading;
-            width: 3rem;
-            height: .2rem;
-            margin: .5rem;
-            border-radius: .5rem;
-            transition: transform 200ms ease-in-out;
+            width: 2.5rem;
+            height: 0.2rem;
+            margin: 0.4rem;
+            border-radius: 0.5rem;
+            @include hover-transition(all, 200ms);
         }
     }
 
     .hamburger-nav {
-        display: none;
-        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
         height: 100vh;
         width: 100vw;
-        top: 100%;
-        right: -120vw;
-        text-align: center;
-        padding-top: 2rem;
+        top: 0;
+        right: -100vw;
+        background-color: rgba($bg-dark-color, 0.95);
+        backdrop-filter: blur(10px);
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+        list-style: none;
+        z-index: 99;
         
         &.open {
-            right: -5vw;
-            translate: all 1s linear;
-            display: block;
+            right: 0;
         }
 
         li {
-            padding: 1rem;
+            padding: 1.5rem;
+            font-size: 1.5rem;
 
             a {
                 text-decoration: none;
                 color: $light-grey;
+                font-family: $primary-font;
             }
         }
-
     }
-}
 
-@media (max-width: $breakpoint-tablet) {
-    header {
-        width: 90%;
-        height: 10vh;
-        position: relative;
+    @include respond-to("tablet") {
+        width: $container-width-mobile;
+        height: $header-height-mobile;
         
         nav {
             display: none;
         }
 
         .hamburger-menu {
-            display: block;
+            @include flex-center(column);
         }
     }
-}
 
-@media (max-width: $breakpoint-mobile) {
-    header {
-
+    @include respond-to("mobile") {
         h1 {
-            font-size: 1.5rem;
-        }
-
-        nav {
-            display: none;
-        }
-
-        .hamburger-menu {
-
-            .bar {
-                width: 2.4rem;
-            }
+            font-size: 1.2rem;
         }
     }
 }

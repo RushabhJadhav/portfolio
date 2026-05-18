@@ -1,86 +1,110 @@
-@use "../abstract/variables" as *;
+@use "../abstract/" as *;
 
-#about-section {
-    width: 80%;
-    margin: 5rem auto;
+#about {
+    width: $container-width;
+    margin: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 2rem;
-    animation: fade-in-left 500ms linear forwards;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @include respond-to("tablet") {
+        flex-direction: column;
+        gap: 3rem;
+    }
     
-    h1, p {
+    h1 {
         text-align: left;
+        margin-bottom: 2rem;
+        background: linear-gradient(90deg, $bright-blue, $hot-pink);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
     }
 
     p {
-        font-size: 1rem;
+        text-align: left;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: $light-grey;
+        margin-bottom: 1rem;
     }
 
     .about-container {
         width: 50%;
-
-        p {
-            padding-bottom: .5rem;
+        @include respond-to("tablet") {
+            width: 100%;
         }
     }
 
     .qualifications {
-        width: 50%;
+        width: 45%;
         color: $light-grey;
-        display: inherit;
+        display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 3rem;
+
+        @include respond-to("tablet") {
+            width: 100%;
+        }
         
         .experience-cont, .education-cont {
-
             h1 {    
-                padding-bottom: 1rem;
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
             }
 
             .experience {
                 display: flex;
                 flex-direction: column;
-                border-bottom: 1px solid $light-grey;
-                padding-bottom: 1.2rem;
+                border-bottom: 1px solid rgba($light-grey, 0.2);
+                padding-bottom: 1.5rem;
+                margin-bottom: 1.5rem;
     
-                .upper-section, .lower-section {
-                    display: inherit;
-                    flex-direction: row;
-                    justify-content: space-between;
-                }
-
                 .upper-section {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 0.8rem;
+
+                    h3 {
+                        color: $solid-heading;
+                        font-size: 1.2rem;
+                    }
 
                     .tenure {
-                        font-size: 0.8rem;
-                        padding: .2rem 1rem;
-                        border-radius: 22px;
-                        background-color: $light-green;
+                        font-size: 0.75rem;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 50px;
+                        background-color: rgba($light-green, 0.1);
                         color: $dark-green;
-                        font-weight: bold;
+                        border: 1px solid $dark-green;
+                        white-space: nowrap;
                     }
                 }
     
                 .lower-section {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1.5rem;
     
                     span {
-                        display: inherit;
+                        display: flex;
                         align-items: center;
-                        gap: .5rem;
+                        gap: 0.5rem;
+                        font-size: 0.9rem;
 
                         svg {
-                            height: .8rem;
-                            margin-top: 9px;
+                            color: $bright-blue;
                         }
     
                         p {
-                            font-size: .9rem;
+                            margin-bottom: 0;
+                            font-size: 0.9rem;
                         }
                     }
                 }
             }
         }
     }
-
 }

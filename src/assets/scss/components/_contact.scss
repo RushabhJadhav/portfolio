@@ -1,24 +1,37 @@
-@use "../abstract/variables" as * ;
+@use "../abstract/" as * ;
 
 .contact {
     text-align: center;
-    width: 80%;
+    width: $container-width;
     margin: auto;
-    height: 70vh;
-    padding-top: 9%;
-    animation: fade-in-left 1s linear forwards;
+    min-height: 50vh;
+    @include flex-center(column);
 
     p {
-        vertical-align: middle;
-        color: $dark-grey-2;
+        color: $solid-heading;
         font-size: 2.5rem;
         font-weight: bold;
+        line-height: 1.4;
+
+        @include respond-to("tablet") {
+            font-size: 1.8rem;
+        }
+
+        @include respond-to("mobile") {
+            font-size: 1.4rem;
+        }
 
         a {
             text-decoration: none;
-            background: -webkit-linear-gradient($bright-blue, $hot-pink);
+            background: linear-gradient(90deg, $bright-blue, $hot-pink);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            @include hover-transition(transform);
+            display: inline-block;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
     }
 }

@@ -1,104 +1,93 @@
-@use "../abstract/variables" as *;
+@use "../abstract/" as *;
 
 .intro {
-    width: 80%;
+    width: $container-width;
     margin: auto;
-    display: flex;
-    padding-top: 16vh;
-    justify-content: center;
-    height: 85vh;
+    @include flex-center;
+    padding-top: 10vh;
+    min-height: 85vh;
 
     .intro-text {
-        display: inline-flex;
-        opacity: 0;
-        flex-direction: column;
-        align-items: center;
-        animation: fade-in-left 500ms linear forwards;
+        @include flex-center(column);
+        text-align: center;
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             color: $solid-heading;
+            line-height: 1.2;
+
+            @include respond-to("tablet") {
+                font-size: 2.5rem;
+            }
+
+            @include respond-to("mobile") {
+                font-size: 2rem;
+            }
         }
     
         span {
             font-size: 1.5rem;
             color: $light-grey;
+            margin-top: 1rem;
         }
 
         .CV_btn {
             position: relative;
-            margin: 1.5rem;
-            height: 3rem;
-            width: 6rem;
-            border-radius: 5px;
+            margin-top: 2.5rem;
+            height: 3.5rem;
+            width: 10rem;
+            border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            background-color: $bright-blue;
-            color: $solid-heading;
+            background: linear-gradient(90deg, $bright-blue, $hot-pink);
+            color: white;
             overflow: hidden;
+            @include flex-center;
+            font-weight: 600;
+            @include hover-transition;
 
             p, svg {
                 position: absolute;
-                right: 50%;
-                top: 50%;
-                transition: all 500ms ease-in-out;
+                transition: all 400ms ease-in-out;
             }
             
             p {
-                transform: translate(50%, -50%);
+                transform: translateY(0);
             }
 
             svg {
-                height: 1.2rem;
-                transform: translate(50%, 200%);
+                height: 1.5rem;
+                transform: translateY(100px);
                 opacity: 0;
             }
 
             &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 
                 p {
-                    transform: translate(50%, -200%);
+                    transform: translateY(-100px);
                     opacity: 0;
                 }
                 svg {
-                    transform: translate(50%, -50%);
+                    transform: translateY(0);
                     opacity: 1;
                 }
             }
         }
     }
 
-}
-
-@media (max-width: $breakpoint-tablet) {
-    .intro {
-        height: 91vh;
-
-        .intro-text {
-            margin-top: 10vh;
-            
-            h1:nth-of-type(2), span:nth-of-type(2) {
-                margin-bottom: 1rem;
-            }
-        }
+    @include respond-to("tablet") {
+        width: $container-width-mobile;
+        min-height: 70vh;
     }
-}
 
-@media (max-width: $breakpoint-mobile) {
-    .intro {
-        width: 85%;
-
+    @include respond-to("mobile") {
         .intro-text {
-            align-items: flex-start;
-            margin-left: 0;
-            margin-top: 0;
-
-            // h1 {
-            //     font-size: 2.3rem;
-            // }
-
-            .CV_btn {
-                margin-left: 0;
+            align-items: center;
+            
+            h1 {
+                text-align: center;
             }
         }
     }
