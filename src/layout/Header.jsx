@@ -1,69 +1,64 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { NavHashLink } from 'react-router-hash-link';
+import { useState } from 'react';
 
 const Header = () => {
-    let [isOpen, setIsOpen] = useState(false);
-    
-    const hamburgerBars = useRef(null);
-    const hamburgerMenu = useRef(null);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const handleClick = () => {
-        setIsOpen(prevState => {
-            const newState = !prevState;
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
 
-            if(newState) {
-                hamburgerBars.current.classList.add('open');
-                hamburgerMenu.current.classList.add('open');
-            } else {
-                hamburgerBars.current.classList.remove('open');
-                hamburgerMenu.current.classList.remove('open');
-            }
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
 
-            return newState;
-        })
-    }
+    const navLinks = [
+        { name: 'Home', path: '/#intro' },
+        { name: 'About', path: '/#about' },
+        { name: 'Tech Stack', path: '/#tech-stack' },
+        { name: 'Projects', path: '/#projects' },
+        { name: 'Contact', path: '/#contact' },
+    ];
 
     return (
-        <>
-            <header>
-                <h1><Link to="/">Rushabh Jadhav</Link></h1>
-                <nav>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/tech-stack">Tech Stack</Link></li>
-                        <li><Link to="/projects">Projects</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                    </ul>
-                    <div className="social-links">
-                        <a href="https://github.com/RushabhJadhav/" target='_blank'>
-                            <FontAwesomeIcon icon={faGithub} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/rushabh-jadhav-002294249/" target='_blank'>
-                            <FontAwesomeIcon icon={faLinkedin} />
-                        </a>
-                        <a href="https://www.instagram.com/j_rushabh39/" target='_blank'>
-                            <FontAwesomeIcon icon={faInstagram} />
-                        </a>
-                    </div>
-                </nav>
-                <div className="hamburger-menu" onClick={handleClick} ref={hamburgerBars}>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                </div>
-                <ul className="hamburger-nav" ref={hamburgerMenu}>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/tech-stack">Tech Stack</Link></li>
-                    <li><Link to="/projects">Projects</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+        <header>
+            <h1><NavHashLink smooth to="/#intro" onClick={closeMenu}>Rushabh Jadhav</NavHashLink></h1>
+            <nav>
+                <ul>
+                    {navLinks.map((link) => (
+                        <li key={link.name}>
+                            <NavHashLink smooth to={link.path}>{link.name}</NavHashLink>
+                        </li>
+                    ))}
                 </ul>
-            </header>
-        </>
-    )
-}
+                <div className="social-links">
+                    <a href="https://github.com/RushabhJadhav/" target='_blank' rel="noreferrer">
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/rushabh-jadhav-002294249/" target='_blank' rel="noreferrer">
+                        <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                    <a href="https://www.instagram.com/j_rushabh39/" target='_blank' rel="noreferrer">
+                        <FontAwesomeIcon icon={faInstagram} />
+                    </a>
+                </div>
+            </nav>
+            <div className={`hamburger-menu ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+            </div>
+            <ul className={`hamburger-nav ${isOpen ? 'open' : ''}`}>
+                {navLinks.map((link) => (
+                    <li key={link.name}>
+                        <NavHashLink smooth to={link.path} onClick={closeMenu}>{link.name}</NavHashLink>
+                    </li>
+                ))}
+            </ul>
+        </header>
+    );
+};
 
 export default Header;
