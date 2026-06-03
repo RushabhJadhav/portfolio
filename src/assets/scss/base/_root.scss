@@ -19,7 +19,7 @@ body {
 
 .section {
     width: $container-width;
-    margin: 4rem auto;
+    margin: 0 auto 4rem auto;
     @include section-padding;
 
     h1 {

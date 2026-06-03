@@ -1,0 +1,76 @@
+@use "../abstract/" as *;
+
+#qualifications {
+    .qualifications {
+        width: 100%;
+        color: $light-grey;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        
+        .experience-cont, .education-cont {
+            h1 {    
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                text-align: left;
+                background: linear-gradient(90deg, $bright-blue, $hot-pink);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                display: inline-block;
+            }
+
+            .experience {
+                display: flex;
+                flex-direction: column;
+                border-bottom: 1px solid rgba($light-grey, 0.2);
+                padding-bottom: 1.5rem;
+                margin-bottom: 1.5rem;
+    
+                .upper-section {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 0.8rem;
+
+                    h3 {
+                        color: $solid-heading;
+                        font-size: 1.4rem;
+                    }
+
+                    .tenure {
+                        font-size: 0.75rem;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 50px;
+                        background-color: rgba($light-green, 0.1);
+                        color: $dark-green;
+                        border: 1px solid $dark-green;
+                        white-space: nowrap;
+                    }
+                }
+    
+                .lower-section {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1.5rem;
+    
+                    span {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-size: 1rem;
+
+                        svg {
+                            color: $bright-blue;
+                        }
+    
+                        p {
+                            margin-bottom: 0;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

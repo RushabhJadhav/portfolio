@@ -1,29 +1,22 @@
-import htmlLogo from '../assets/img/vscode-icons_file-type-html.svg';
-import cssLogo from '../assets/img/vscode-icons_file-type-css.svg';
-import jsLogo from '../assets/img/vscode-icons_file-type-js-official.svg';
-import reactLogo from '../assets/img/logos_react.svg';
-import vueLogo from '../assets/img/vue-svgrepo-com.svg';
-import bootstrapLogo from '../assets/img/logos_bootstrap.svg';
-import sassLogo from '../assets/img/logos_sass.svg';
-import gitLogo from '../assets/img/logos_git-icon.svg';
-import tailwindLogo from '../assets/img/vscode-icons_file-type-tailwind.svg';
-import reduxLogo from '../assets/img/Vector.png';
-import vscodeLogo from '../assets/img/vscode-icons_file-type-vscode.svg';
-import typescriptLogo from '../assets/img/typescript.svg';
 import { motion } from 'framer-motion';
 
 const TechStack = () => {
     const stackBlock = [
-        {imgSrc: htmlLogo, altTxt: "HTML Logo", text: "HTML"},
-        {imgSrc: cssLogo, altTxt: "CSS Logo", text: "CSS"},
-        {imgSrc: jsLogo, altTxt: "JavaScript Logo", text: "Javascript"},
-        {imgSrc: reactLogo, altTxt: "React Logo", text: "React JS"},
-        {imgSrc: vueLogo, altTxt: "Vue Logo", text: "Vue JS"},
-        {imgSrc: reduxLogo, altTxt: "Redux Logo", text: "Redux"},
-        {imgSrc: typescriptLogo, altTxt: "Tyepscript Logo", text: "Typescript"},
-        {imgSrc: sassLogo, altTxt: "Sass Logo", text: "SASS/SCSS"},
-        {imgSrc: bootstrapLogo, altTxt: "Bootstrap Logo", text: "Bootstrap"},
-        {imgSrc: tailwindLogo, altTxt: "Tailwind Logo", text: "Tailwind"},
+        {imgSrc: "https://skillicons.dev/icons?i=html", altTxt: "HTML Logo", text: "HTML"},
+        {imgSrc: "https://skillicons.dev/icons?i=css", altTxt: "CSS Logo", text: "CSS"},
+        {imgSrc: "https://skillicons.dev/icons?i=js", altTxt: "JavaScript Logo", text: "Javascript"},
+        {imgSrc: "https://skillicons.dev/icons?i=react", altTxt: "React Logo", text: "React JS"},
+        {imgSrc: "https://skillicons.dev/icons?i=vue", altTxt: "Vue Logo", text: "Vue JS"},
+        {imgSrc: "https://skillicons.dev/icons?i=redux", altTxt: "Redux Logo", text: "Redux"},
+        {imgSrc: "https://skillicons.dev/icons?i=ts", altTxt: "Tyepscript Logo", text: "Typescript"},
+        {imgSrc: "https://skillicons.dev/icons?i=sass", altTxt: "Sass Logo", text: "SASS/SCSS"},
+        {imgSrc: "https://skillicons.dev/icons?i=bootstrap", altTxt: "Bootstrap Logo", text: "Bootstrap"},
+        {imgSrc: "https://skillicons.dev/icons?i=tailwind", altTxt: "Tailwind Logo", text: "Tailwind"},
+        {imgSrc: "https://skillicons.dev/icons?i=nodejs", altTxt: "Node.js Logo", text: "Node.js"},
+        {imgSrc: "https://skillicons.dev/icons?i=express", altTxt: "Express Logo", text: "Express.js"},
+        {imgSrc: "https://skillicons.dev/icons?i=mongodb", altTxt: "MongoDB Logo", text: "MongoDB"},
+        {imgSrc: "https://skillicons.dev/icons?i=git", altTxt: "Git Logo", text: "Git"},
+        {imgSrc: "https://skillicons.dev/icons?i=vscode", altTxt: "VS Code Logo", text: "VS Code"},
     ];
 
     const containerVariants = {
@@ -51,7 +44,7 @@ const TechStack = () => {
             variants={containerVariants}
         >
             <motion.h1 variants={itemVariants}>My Tech Stack</motion.h1>
-            <motion.p variants={itemVariants}>Technologies I’ve been working with recently</motion.p>
+            <motion.p variants={itemVariants}>Technologies I've been working with recently</motion.p>
             <ul className='stack-images'>
                 {stackBlock.map((item, index) => {
                     return (

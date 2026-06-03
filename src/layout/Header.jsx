@@ -15,16 +15,17 @@ const Header = () => {
     };
 
     const navLinks = [
-        { name: 'Home', path: '/#intro' },
+        { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
-        { name: 'Tech Stack', path: '/#tech-stack' },
-        { name: 'Projects', path: '/#projects' },
-        { name: 'Contact', path: '/#contact' },
+        { name: 'Experience', path: '/qualifications' },
+        { name: 'Tech Stack', path: '/tech-stack' },
+        { name: 'Projects', path: '/projects' },
+        { name: 'Contact', path: '/contact' },
     ];
 
     return (
         <header>
-            <h1><NavHashLink smooth to="/#intro" onClick={closeMenu}>Rushabh Jadhav</NavHashLink></h1>
+            <h1><NavHashLink smooth to="/" onClick={closeMenu}>Rushabh Jadhav</NavHashLink></h1>
             <nav>
                 <ul>
                     {navLinks.map((link) => (
