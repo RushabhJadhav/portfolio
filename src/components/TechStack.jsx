@@ -12,11 +12,11 @@ const TechStack = () => {
         {imgSrc: "https://skillicons.dev/icons?i=sass", altTxt: "Sass Logo", text: "SASS/SCSS"},
         {imgSrc: "https://skillicons.dev/icons?i=bootstrap", altTxt: "Bootstrap Logo", text: "Bootstrap"},
         {imgSrc: "https://skillicons.dev/icons?i=tailwind", altTxt: "Tailwind Logo", text: "Tailwind"},
+        {imgSrc: "https://skillicons.dev/icons?i=git", altTxt: "Git Logo", text: "Git"},
         {imgSrc: "https://skillicons.dev/icons?i=nodejs", altTxt: "Node.js Logo", text: "Node.js"},
         {imgSrc: "https://skillicons.dev/icons?i=express", altTxt: "Express Logo", text: "Express.js"},
         {imgSrc: "https://skillicons.dev/icons?i=mongodb", altTxt: "MongoDB Logo", text: "MongoDB"},
-        {imgSrc: "https://skillicons.dev/icons?i=git", altTxt: "Git Logo", text: "Git"},
-        {imgSrc: "https://skillicons.dev/icons?i=vscode", altTxt: "VS Code Logo", text: "VS Code"},
+        {imgSrc: "https://skillicons.dev/icons?i=mysql", altTxt: "MySQL Logo", text: "MySQL"},
     ];
 
     const containerVariants = {
