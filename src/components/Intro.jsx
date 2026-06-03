@@ -17,7 +17,7 @@ const Intro = () => {
                 <h1>Frontend Developer</h1>
                 <span>Based in Mumbai, Maharashtra, India</span>
                 <span>Specialized in Vue and React</span>
-                <a className="CV_btn" href="/pdf/Rushabh_Jadhav_CV.pdf" target="_blank" rel="noopener noreferrer">
+                <a className="CV_btn" href="https://drive.google.com/file/d/1gnlweC8LAefIdIuF7wbr7D-yW_o84QgI/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                     <p>Resume</p>
                     <FontAwesomeIcon icon={faCloudArrowDown} />
                 </a>
