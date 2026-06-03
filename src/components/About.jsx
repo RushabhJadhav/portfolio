@@ -22,6 +22,26 @@ const About = () => {
                     <h1>Work Experience</h1>
                     <div className="experience">
                         <div className="upper-section">
+                            <h3>Frontend Developer SDE - 2</h3>
+                            <span className="tenure">Full Time</span>
+                        </div>
+                        <div className="lower-section">
+                            <span>
+                                <FontAwesomeIcon icon={faBuilding} />
+                                <p>Codesis Technologies</p>
+                            </span>
+                            <span>
+                                <FontAwesomeIcon icon={faLocation} />
+                                <p>Malad, Mumbai</p>
+                            </span>
+                            <span>
+                                <FontAwesomeIcon icon={faCalendarDays} />
+                                <p>May 2026 - Present</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div className="experience">
+                        <div className="upper-section">
                             <h3>Assistant Software Consultant</h3>
                             <span className="tenure">Full Time</span>
                         </div>
