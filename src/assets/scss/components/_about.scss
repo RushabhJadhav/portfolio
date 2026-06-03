@@ -1,110 +1,28 @@
 @use "../abstract/" as *;
 
 #about {
-    width: $container-width;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 4rem;
-
-    @include respond-to("tablet") {
-        flex-direction: column;
-        gap: 3rem;
-    }
-    
-    h1 {
-        text-align: left;
-        margin-bottom: 2rem;
-        background: linear-gradient(90deg, $bright-blue, $hot-pink);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: inline-block;
-    }
-
-    p {
-        text-align: left;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: $light-grey;
-        margin-bottom: 1rem;
-    }
-
     .about-container {
-        width: 50%;
-        @include respond-to("tablet") {
-            width: 100%;
+        width: 100%;
+        text-align: center;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, $bright-blue, $hot-pink);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
-    }
 
-    .qualifications {
-        width: 45%;
-        color: $light-grey;
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-
-        @include respond-to("tablet") {
-            width: 100%;
-        }
-        
-        .experience-cont, .education-cont {
-            h1 {    
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .experience {
-                display: flex;
-                flex-direction: column;
-                border-bottom: 1px solid rgba($light-grey, 0.2);
-                padding-bottom: 1.5rem;
-                margin-bottom: 1.5rem;
-    
-                .upper-section {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 0.8rem;
-
-                    h3 {
-                        color: $solid-heading;
-                        font-size: 1.2rem;
-                    }
-
-                    .tenure {
-                        font-size: 0.75rem;
-                        padding: 0.3rem 0.8rem;
-                        border-radius: 50px;
-                        background-color: rgba($light-green, 0.1);
-                        color: $dark-green;
-                        border: 1px solid $dark-green;
-                        white-space: nowrap;
-                    }
-                }
-    
-                .lower-section {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 1.5rem;
-    
-                    span {
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                        font-size: 0.9rem;
-
-                        svg {
-                            color: $bright-blue;
-                        }
-    
-                        p {
-                            margin-bottom: 0;
-                            font-size: 0.9rem;
-                        }
-                    }
-                }
-            }
+        p {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: $light-grey;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
