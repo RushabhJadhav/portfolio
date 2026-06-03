@@ -1,9 +1,3 @@
-import rectangeImage1 from "../assets/img/Rectangle_1.png";
-import rectangeImage2 from "../assets/img/Rectangle_2.png";
-import rectangeImage3 from "../assets/img/Rectangle_3.png";
-import rectangeImage4 from "../assets/img/Rectangle_4.png";
-import rectangeImage5 from "../assets/img/Rectangle_5.png";
-import rectangeImage6 from "../assets/img/Rectangle_6.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
@@ -11,12 +5,54 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
     const projectCards = [
-        {title: "Football App", desc: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content", stack: "HTML , JavaScript, SASS, React", img: rectangeImage1, preview: "https://github.com/RushabhJadhav/football-app", code: "https://github.com/RushabhJadhav/football-app"},
-        {title: "News App", desc: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content", stack: "HTML , JavaScript, SASS, Vue", img: rectangeImage2, preview: "https://github.com/RushabhJadhav/vue-news-app", code: "https://github.com/RushabhJadhav/vue-news-app"},
-        {title: "To Do List", desc: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content", stack: "HTML , JavaScript, SASS, React", img: rectangeImage3, preview: "https://rushabhjadhav.github.io/react-to-do-list/", code: "https://github.com/RushabhJadhav/react-to-do-list"},
-        {title: "Tips Calculator", desc: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content", stack: "HTML , JavaScript, SASS, React", img: rectangeImage4, preview: "https://rushabhjadhav.github.io/tips-calculator/", code: "https://github.com/RushabhJadhav/tips-calculator"},
-        {title: "Tic Tac Toe", desc: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content", stack: "HTML , CSS, JavaScript", img: rectangeImage5, preview: "https://github.com/RushabhJadhav/tic-tac-toe-game", code: "https://github.com/RushabhJadhav/tic-tac-toe-game"},
-        {title: "Weather App", desc: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content", stack: "HTML , CSS, JavaScript", img: rectangeImage6, preview: "https://weather-app-by-rushabh-jadhav.netlify.app/", code: "https://github.com/RushabhJadhav/weather-app"},
+        {
+            title: "Kitty-Chatty", 
+            desc: "A real-time chat application built with the MERN stack, featuring Socket.io for instant messaging, JWT authentication, and Cloudinary for media storage.", 
+            stack: "JavaScript, MongoDB, Express, React, Node, Socket.io", 
+            img: "https://skillicons.dev/icons?i=react,nodejs,mongodb,express", 
+            preview: "", 
+            code: "https://github.com/RushabhJadhav/kitty-chatty"
+        },
+        {
+            title: "Music-App", 
+            desc: "A high-performance music streaming application built with the MERN stack, featuring Redux Toolkit for centralized state management and Axios for API integration.", 
+            stack: "TypeScript, React, Redux, Node, Express, MongoDB", 
+            img: "https://skillicons.dev/icons?i=ts,react,redux,nodejs", 
+            preview: "", 
+            code: "https://github.com/RushabhJadhav/music-app"
+        },
+        {
+            title: "News-App", 
+            desc: "A sleek, responsive news platform built with Vue 3 and Vuex, fetching real-time news across multiple global categories using the NewsAPI.", 
+            stack: "Vue 3, Vite, Vuex, JavaScript", 
+            img: "https://skillicons.dev/icons?i=vue,vite,js", 
+            preview: "", 
+            code: "https://github.com/RushabhJadhav/news-app"
+        },
+        {
+            title: "Thinkboard", 
+            desc: "A collaborative brainstorming and planning tool built with modern web technologies.", 
+            stack: "TypeScript, React, Tailwind", 
+            img: "https://skillicons.dev/icons?i=ts,react,tailwind", 
+            preview: "", 
+            code: "https://github.com/RushabhJadhav/thinkboard"
+        },
+        {
+            title: "Tips Calculator", 
+            desc: "A simple and efficient tool to calculate tips and split bills between multiple people.", 
+            stack: "JavaScript, HTML, SASS, React", 
+            img: "https://skillicons.dev/icons?i=js,react,sass", 
+            preview: "https://rushabhjadhav.github.io/tips-calculator/", 
+            code: "https://github.com/RushabhJadhav/tips-calculator"
+        },
+        {
+            title: "To Do List", 
+            desc: "A feature-rich To-Do list application to manage daily tasks efficiently.", 
+            stack: "JavaScript, HTML, SASS, React", 
+            img: "https://skillicons.dev/icons?i=js,react,sass", 
+            preview: "https://rushabhjadhav.github.io/react-to-do-list/", 
+            code: "https://github.com/RushabhJadhav/react-to-do-list"
+        },
     ];
 
     const containerVariants = {
@@ -47,31 +83,54 @@ const Projects = () => {
             <motion.p variants={itemVariants}>Things I've built so far</motion.p>
             <div className="cards-container">
                 {projectCards.map((item, index) => {
-                    return <motion.div className="card" key={index} style={{backgroundImage: `url(${item.img})`}} variants={itemVariants}>
-                        <div className="card-text">
-                            <p className="card-title">{item.title}</p>
-                            <p className="card-desc">{item.desc}</p>
-                            <p className="card-stack">Stack: {item.stack}</p>
-                            <ul className="card-links">
-                                <li>
-                                    <a href={item.preview} target="_blank" rel="noreferrer">
-                                        <FontAwesomeIcon icon={faLink} />
-                                        Live Preview
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={item.code} target="_blank" rel="noreferrer">
-                                        <FontAwesomeIcon icon={faGithub} />
-                                        View Code
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </motion.div>
+                    const hasPreview = item.preview && item.preview !== "";
+                    const hasCode = item.code && item.code !== "";
+                    const hasImg = item.img && item.img !== "";
+
+                    return (
+                        <motion.div 
+                            className={`card ${!hasImg ? 'no-img' : ''}`} 
+                            key={index} 
+                            style={hasImg ? { backgroundImage: `url(${item.img})` } : {}} 
+                            variants={itemVariants}
+                        >
+                            <div className="card-text">
+                                <p className="card-title">{item.title}</p>
+                                <p className="card-desc">{item.desc}</p>
+                                <p className="card-stack">Stack: {item.stack}</p>
+                                <ul className="card-links">
+                                    <li>
+                                        <a 
+                                            href={hasPreview ? item.preview : undefined} 
+                                            target="_blank" 
+                                            rel="noreferrer"
+                                            className={!hasPreview ? "disabled" : ""}
+                                            onClick={(e) => !hasPreview && e.preventDefault()}
+                                        >
+                                            <FontAwesomeIcon icon={faLink} />
+                                            {hasPreview ? "Live Preview" : "Coming Soon"}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a 
+                                            href={hasCode ? item.code : undefined} 
+                                            target="_blank" 
+                                            rel="noreferrer"
+                                            className={!hasCode ? "disabled" : ""}
+                                            onClick={(e) => !hasCode && e.preventDefault()}
+                                        >
+                                            <FontAwesomeIcon icon={faGithub} />
+                                            View Code
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </motion.div>
+                    );
                 })}
             </div>
         </motion.div>
-    )
-}
+    );
+};
 
 export default Projects;
