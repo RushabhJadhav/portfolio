@@ -5,12 +5,12 @@ import Contact from "../components/Contact";
 
 const PageBody = () => {
     return (
-        <main>
+        <div>
             <Intro />
             <TechStack />
             <Projects />
             <Contact />
-        </main>
+        </div>
     );
 };
 

@@ -14,9 +14,9 @@ const Intro = () => {
         >
             <div className="intro-text">
                 <h1>Hi, I'm Rushabh, a Self Taught</h1>
-                <h1>Frontend Developer</h1>
-                <span>Based in Mumbai, Maharashtra, India</span>
-                <span>Specialized in Vue and React</span>
+                <h1>Software Developer</h1>
+                <span>Based in Mumbai, India</span>
+                <span>Specialized in Frontend Development</span>
                 <a className="CV_btn" href="https://drive.google.com/file/d/1gnlweC8LAefIdIuF7wbr7D-yW_o84QgI/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                     <p>Resume</p>
                     <FontAwesomeIcon icon={faCloudArrowDown} />

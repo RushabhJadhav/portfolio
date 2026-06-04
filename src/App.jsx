@@ -11,18 +11,22 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<PageBody />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/qualifications" element={<Qualifications />} />
-        <Route path="/tech-stack" element={<TechStack />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* Fallback to home for any other route */}
-        <Route path="*" element={<PageBody />} />
-      </Routes>
-      <Footer />
+      <div className="app-container">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<PageBody />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/qualifications" element={<Qualifications />} />
+            <Route path="/tech-stack" element={<TechStack />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* Fallback to home for any other route */}
+            <Route path="*" element={<PageBody />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
