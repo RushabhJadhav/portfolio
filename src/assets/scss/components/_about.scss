@@ -3,26 +3,53 @@
 #about {
     .about-container {
         width: 100%;
-        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
 
         h1 {
+            display: block;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             background: linear-gradient(90deg, $bright-blue, $hot-pink);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            display: inline-block;
+            font-size: 2.5rem;
+
+            @include respond-to("mobile") {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
         }
 
         p {
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: $light-grey;
-            margin-bottom: 1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.3rem;
+            color: $solid-heading;
+            font-weight: 500;
+            margin-bottom: 2rem;
+
+            @include respond-to("mobile") {
+                text-align: left;
+                font-size: 1.05rem;
+                line-height: 1.7;
+                
+                &:first-of-type {
+                    font-size: 1.2rem;
+                }
+            }
+
+            a {
+                color: $bright-blue;
+                text-decoration: none;
+                font-weight: 500;
+                @include hover-transition(color);
+
+                &:hover {
+                    color: $hot-pink;
+                    text-decoration: underline;
+                }
+            }
         }
     }
 }

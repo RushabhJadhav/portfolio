@@ -12,8 +12,9 @@ const About = () => {
         >
             <div className="about-container">
                 <h1>About Me</h1>
-                <p>I have completed my Bachelor of Arts degree in Political Science and Psychology. During my final year, I discovered coding and was instantly hooked. What started as a personal interest quickly grew into a deep passion for frontend development. My self-taught journey has been fueled by curiosity, determination, and a drive to create seamless, user-friendly web experiences.</p>
-                <p>Learning to code has not only transformed my career aspirations but has also taught me the value of continuous learning and problem-solving. I am committed to honing my skills and contributing to projects that make a meaningful impact.</p>
+                <p>My path into tech wasn't a traditional one. While pursuing my Bachelor's degree in Political Science and Psychology, I originally planned to build a career in sports psychology. In 2021, I became curious about technology after a conversation with my buddy <a href="https://yashtarkar.vercel.app/" target="_blank" rel="noopener noreferrer">Yash</a>, who was pursuing engineering. When I asked him what the easiest language was for someone from a non-technical background, he suggested HTML—and that simple recommendation sparked my interest in web development.</p>
+                <p>I started learning through YouTube tutorials, building small projects, and reaching out to <a href="https://yashtarkar.vercel.app/" target="_blank" rel="noopener noreferrer">Yash</a> whenever I got stuck. What began as curiosity quickly grew into a passion for creating things on the web and solving problems through code.</p>
+                <p>Today, I'm a Software Developer specializing in Frontend Development, focused on building responsive and user-friendly applications. My journey from an arts background to tech has taught me the value of curiosity, persistence, and continuous learning.</p>
             </div>
         </motion.div>
     )
