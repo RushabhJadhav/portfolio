@@ -6,9 +6,16 @@
         color: $light-grey;
         display: flex;
         flex-direction: row;
-        gap: 3rem;
+        gap: 4rem;
+
+        @include respond-to("tablet") {
+            flex-direction: column;
+            gap: 3rem;
+        }
         
         .experience-cont, .education-cont {
+            flex: 1;
+
             h1 {    
                 font-size: 2rem;
                 margin-bottom: 2rem;
@@ -18,6 +25,10 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 display: inline-block;
+
+                @include respond-to("mobile") {
+                    font-size: 1.8rem;
+                }
             }
 
             .experience {
@@ -32,10 +43,21 @@
                     justify-content: space-between;
                     align-items: center;
                     margin-bottom: 0.8rem;
+                    gap: 1rem;
+
+                    @include respond-to("mobile") {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0.5rem;
+                    }
 
                     h3 {
                         color: $solid-heading;
                         font-size: 1.4rem;
+
+                        @include respond-to("mobile") {
+                            font-size: 1.2rem;
+                        }
                     }
 
                     .tenure {
@@ -53,6 +75,10 @@
                     display: flex;
                     flex-wrap: wrap;
                     gap: 1.5rem;
+
+                    @include respond-to("mobile") {
+                        gap: 1rem;
+                    }
     
                     span {
                         display: flex;
@@ -62,11 +88,16 @@
 
                         svg {
                             color: $bright-blue;
+                            min-width: 1rem;
                         }
     
                         p {
                             margin-bottom: 0;
                             font-size: 1rem;
+
+                            @include respond-to("mobile") {
+                                font-size: 0.9rem;
+                            }
                         }
                     }
                 }
