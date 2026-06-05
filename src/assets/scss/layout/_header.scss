@@ -11,6 +11,7 @@ header {
 
     h1 {
         background: linear-gradient(90deg, $bright-blue, $hot-pink);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-family: $primary-font;
@@ -99,21 +100,42 @@ header {
         background-color: rgba($bg-dark-color, 0.95);
         backdrop-filter: blur(10px);
         transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
-        list-style: none;
         z-index: 99;
         
         &.open {
             right: 0;
         }
 
-        li {
-            padding: 1.5rem;
-            font-size: 1.5rem;
+        ul {
+            list-style: none;
+            @include flex-center(column);
+
+            li {
+                padding: 1.5rem;
+                font-size: 1.5rem;
+
+                a {
+                    text-decoration: none;
+                    color: $light-grey;
+                    font-family: $primary-font;
+                }
+            }
+        }
+
+        .social-links {
+            @include flex-center(row);
+            gap: 2rem;
+            margin-top: 2rem;
 
             a {
-                text-decoration: none;
                 color: $light-grey;
-                font-family: $primary-font;
+                font-size: 2rem;
+                @include hover-transition(transform);
+
+                &:hover {
+                    transform: translateY(-3px);
+                    color: $bright-blue;
+                }
             }
         }
     }

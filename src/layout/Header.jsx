@@ -51,13 +51,26 @@ const Header = () => {
                 <div className="bar"></div>
                 <div className="bar"></div>
             </div>
-            <ul className={`hamburger-nav ${isOpen ? 'open' : ''}`}>
-                {navLinks.map((link) => (
-                    <li key={link.name}>
-                        <NavHashLink smooth to={link.path} onClick={closeMenu}>{link.name}</NavHashLink>
-                    </li>
-                ))}
-            </ul>
+            <div className={`hamburger-nav ${isOpen ? 'open' : ''}`}>
+                <ul>
+                    {navLinks.map((link) => (
+                        <li key={link.name}>
+                            <NavHashLink smooth to={link.path} onClick={closeMenu}>{link.name}</NavHashLink>
+                        </li>
+                    ))}
+                </ul>
+                <div className="social-links">
+                    <a href="https://github.com/RushabhJadhav/" target='_blank' rel="noreferrer" onClick={closeMenu}>
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/rushabh-jadhav-002294249/" target='_blank' rel="noreferrer" onClick={closeMenu}>
+                        <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                    <a href="https://www.instagram.com/j_rushabh39/" target='_blank' rel="noreferrer" onClick={closeMenu}>
+                        <FontAwesomeIcon icon={faInstagram} />
+                    </a>
+                </div>
+            </div>
         </header>
     );
 };
